@@ -1,3 +1,11 @@
+---
+layout: default
+title: Breaching Active Directory
+nav_order: 2
+parent: Active Directory
+has_children: false
+---
+
 # Breaching Active Directory
 
 
@@ -26,7 +34,7 @@ If you are using a Kali VM, Network Manager is most likely used as DNS manager. 
 $ sudo systemctl restart NetworkManager
 ```
 
-![Networkmanager.conf](images/Networkmanager.conf.png)
+![Networkmanager.conf](../images/Networkmanager.conf.png)
 
 Test Your DNS :
 
@@ -134,11 +142,11 @@ if __name__ == "__main__":
 
 
 
-![Screen Shot 2023-01-24 at 11.23.38 PM](images/thm.breach.01.png)
+![Screen Shot 2023-01-24 at 11.23.38 PM](../images/thm.breach.01.png)
 
 Authenticating web application with a valid credential pair
 
-| <img src="images/thm.breach.02.png" alt="Screen Shot 2023-01-24 at 11.42.13 PM" style="zoom:67%;" /> | ![Screen Shot 2023-01-24 at 11.42.27 PM](images/thm.breach.03.png) |
+| <img src="../images/thm.breach.02.png" alt="Screen Shot 2023-01-24 at 11.42.13 PM" style="zoom:67%;" /> | ![Screen Shot 2023-01-24 at 11.42.27 PM](../images/thm.breach.03.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 
 
@@ -177,9 +185,9 @@ gordon.stevens
 
 Let's capture the testing over port 389
 
-| ![breachad.5](images/breachad.5.png) | ![breachad.4](images/breachad.4.png) |
-| ------------------------------------ | ------------------------------------ |
-|                                      |                                      |
+| ![breachad.5](../images/breachad.5.png) | ![breachad.4](../images/breachad.4.png) |
+| --------------------------------------- | --------------------------------------- |
+|                                         |                                         |
 
 #### Intalling rogue LDAP
 
@@ -189,12 +197,12 @@ Let's capture the testing over port 389
 
 ```
 
-![breachad.1](images/breachad.1.png)
+![breachad.1](../images/breachad.1.png)
 
 Adding you prefered password
 
-| ![breachad.3](images/breachad.3.png) | ![breachad.2](images/breachad.2.png) |
-| ------------------------------------ | ------------------------------------ |
+| ![breachad.3](../images/breachad.3.png) | ![breachad.2](../images/breachad.2.png) |
+| --------------------------------------- | --------------------------------------- |
 
 
 
@@ -204,31 +212,31 @@ Reconfigure the rogue LDAP
 $ sudo dpkg-reconfigure -p low slapd
 ```
 
-![Screen.1](images/Screen.1.png)
+![Screen.1](../images/Screen.1.png)
 
-![Screen.2](images/Screen.2.png)
-
-
-
-![Screen.3](images/Screen.3.png)
-
-![Screen.4](images/Screen.4.png)
-
-![Screen.5](images/Screen.5.png)
-
-![Screen.6](images/Screen.6.png)
+![Screen.2](../images/Screen.2.png)
 
 
 
-![Screen.7](images/Screen.7.png)
+![Screen.3](../images/Screen.3.png)
+
+![Screen.4](../images/Screen.4.png)
+
+![Screen.5](../images/Screen.5.png)
+
+![Screen.6](../images/Screen.6.png)
 
 
 
-![Screen.8](images/Screen.8.png)
+![Screen.7](../images/Screen.7.png)
 
 
 
-![Screen .11](images/Screen%20.11.png)
+![Screen.8](../images/Screen.8.png)
+
+
+
+![Screen .11](../images/Screen%20.11.png)
 
 
 
@@ -274,11 +282,11 @@ Capture printer request
 
 ```
 
-![breackad.123](images/breackad.123.png)
+![breackad.123](../images/breackad.123.png)
 
 Found password
 
-![breachad.faf](images/breachad.faf.png)
+![breachad.faf](../images/breachad.faf.png)
 
 <details>
     <summary> What type of attack can be performed against LDAP Authentication systems not commonly found against Windows Authentication systems?</summary> 
@@ -309,19 +317,19 @@ tryhackmeldappass1@
 $ git clone https://github.com/lgandx/Responder.git
 ```
 
-![breachad.103](images/breachad.103.jpeg)
+![breachad.103](../images/breachad.103.jpeg)
 
 
 
 ##### Review and adjust the responder config as needed
 
-![breachad.104](images/breachad.104.jpeg)
+![breachad.104](../images/breachad.104.jpeg)
 
 
 
 Identify the interface connected to the THM lab
 
-![breachad.102](images/breachad.102.jpeg)
+![breachad.102](../images/breachad.102.jpeg)
 
 
 
@@ -364,9 +372,9 @@ A few minutes later
 $ sudo python3 Responder.py -I breachad
 ```
 
-![breach.12](images/breach.12.jpeg)
+![breach.12](../images/breach.12.jpeg)
 
-![breach.424](images/breach.424.jpeg)
+![breach.424](../images/breach.424.jpeg)
 
 
 
@@ -376,7 +384,7 @@ $ sudo python3 Responder.py -I breachad
 $ john --wordlist=passwordlist.txt hashes.txt 
 ```
 
-![adbreach.4242](images/adbreach.4242.jpeg)
+![adbreach.4242](../images/adbreach.4242.jpeg)
 
 #### Cracking the Hash using hash cat
 
@@ -384,7 +392,7 @@ $ john --wordlist=passwordlist.txt hashes.txt
 $ hashcat -m 5600 hashes.txt passwordlist.txt --force
 ```
 
-![adbreach.5454](images/adbreach.5454.jpeg)
+![adbreach.5454](../images/adbreach.5454.jpeg)
 
 > Issues:
 >
@@ -420,10 +428,10 @@ FPassword1!
 
 #### PXE Boot Image Retrieval
 
-<img src="images/breachad.pxe.jpeg" alt="breachad.pxe" style="alignleft" />
+<img src="../images/breachad.pxe.jpeg" alt="breachad.pxe" style="alignleft" />
 
-| ![breachad.ssh](images/breachad.ssh.jpeg) | ![breachad.nslookup](images/breachad.nslookup.jpeg) |
-| ----------------------------------------- | --------------------------------------------------- |
+| ![breachad.ssh](../images/breachad.ssh.jpeg) | ![breachad.nslookup](../images/breachad.nslookup.jpeg) |
+| -------------------------------------------- | ------------------------------------------------------ |
 
 
 
@@ -533,9 +541,9 @@ ma.db                                                                           
 kali@kali:~/Docs/THM/AD.Attack/BreachAD.Task.7.confiles$ sqlitebrowser ma.db   
 ```
 
-![adbreach.task7.2](images/adbreach.task7.2.jpeg)
+![adbreach.task7.2](../images/adbreach.task7.2.jpeg)
 
-![adbreach.task7.1](images/adbreach.task7.1.jpeg)
+![adbreach.task7.1](../images/adbreach.task7.1.jpeg)
 
 
 
@@ -547,7 +555,7 @@ https://github.com/AliDarwish786/mcafee-sitelist-pwd-decryption/blob/master/mcaf
 kali@kali:~/Docs/THM/AD.Attack/BreachAD.Task.7.confiles$ ./mcafee-pwd-decrypt.py 'jWbTyS7BL1Hj7PkO5Di/QhhYmcGj5cOoZ2OkDTrFXsR/abAFPM9B3Q=='
 ```
 
-![Screen Shot 2023-02-05 at 1.23.37 PM](images/Screen%20Shot%202023-02-05%20at%201.23.37%20PM.jpg)
+![Screen Shot 2023-02-05 at 1.23.37 PM](../images/Screen%20Shot%202023-02-05%20at%201.23.37%20PM.jpg)
 
 
 
